@@ -13,6 +13,25 @@ document.addEventListener('DOMContentLoaded', function(){
         });
     }
 
+
+    // Function to toggle education details visibility
+    function toggleEducationDetails(index) {
+        const educationDetails = document.querySelector(`.school[data-index="${index}"] .education-details`);
+        if (educationDetails) {
+            educationDetails.style.display = educationDetails.style.display === 'none' ? 'block' : 'none';
+        }
+    }
+
+    // Add click event listeners to education entries
+    const educationEntries = document.querySelectorAll('.school');
+    educationEntries.forEach(education => {
+        education.addEventListener('click', function () {
+            const index = this.getAttribute('data-index');
+            toggleEducationDetails(index);
+        });
+    });
+
+
     // Add click event listeners to job entries
     const jobEntries = document.querySelectorAll('.job');
     jobEntries.forEach(job => {
@@ -32,7 +51,7 @@ document.addEventListener('DOMContentLoaded', function(){
 
 
     // Skills data (replace with your own skills)
-    const skills = ['Python', 'SQL', 'HTML', 'CSS', 'JavaScript', 'Azure Data Factory', 'Tableau'];
+    const skills = ['Python', 'SQL', 'JavaScript', 'HTML5', 'CSS3', 'MS Excel (Macros, VBA) ', 'Azure Data Factory', 'Tableau', 'Agile Development', 'Scrum', 'Power Automate Cloud', 'Automation Anywhere AA360'];
 
 
     // Function to dynamically add skills to the skills container
@@ -50,14 +69,14 @@ document.addEventListener('DOMContentLoaded', function(){
     // Projects data (replace with your own projects)
     const projects = [
         {
-            title: 'Project 1',
-            description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
-            link: '#',
+            title: 'Python SQL Server CRUD Interaction',
+            description: "Developed a Python project showcasing proficiency in SQL database interaction and data manipulation. Created a custom Python class, 'SQLServerDB', to establish connections with a SQL Server database and perform CRUD operations (Create, Read, Update, Delete) on the  'Customers' table. Leveraged the pyodbc library for seamless database connectivity. The project demonstrates hands-on experience in implementing database-driven applications and handling real-world data scenarios using Python. Skills Demonstrated: Python, SQL Server, pyodbc, CRUD Operations, Data Manipulation, Error Handling.",
+            link: 'https://github.com/adityarana99/SQL-Server-CRUD-Operations-with-Python',
         },
         {
-            title: 'Project 2',
-            description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
-            link: '#',
+            title: 'Library Management System',
+            description: "Implemented a Library Management System in Python, showcasing data modeling and interaction with a Microsoft SQL Server database. The system facilitates management of information about authors, books, and library patrons through a user-friendly command-line interface. Key features include data modeling with SQLAlchemy, support for CRUD operations. Skills Demonstrated: Data modeling with SQLAlchemy, CRUD operations, Error handling, Database interaction, Command-line application development.",
+            link: 'https://github.com/adityarana99/Library-Management-System',
         },
         // Add more projects as needed
     ];
@@ -140,6 +159,7 @@ document.addEventListener('DOMContentLoaded', function(){
     }
 
     // Call the functions to display skills and projects
+    handleHeaderAnimation();
     displaySkills();
     displayProjects();
 });

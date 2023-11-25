@@ -38,10 +38,9 @@ header::before {
 }
 
 header.scrolled {
-    background-color: #7fa1c6; /* Change background color on scroll */
+    background-color: rgb(233, 212, 148); /* Change background color on scroll */
 }
 
-/* Intro */
 .intro {
     max-width: 600px;
     margin: 0 auto;
@@ -123,6 +122,47 @@ section h2 {
 }
 
 
+/* Education Section */
+#education {
+    text-align: center;
+    padding: 80px 0;
+    background-color: #d6d6d6;
+}
+
+.education {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.school {
+    border: 1px solid #a86d3c;
+    border-radius: 5px;
+    margin: 20px 0;
+    padding: 15px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.school:hover {
+    background-color: #f0f0f0;
+}
+
+.school h3 {
+    margin-bottom: 10px;
+    color: #007bff;
+}
+
+.school p {
+    margin-bottom: 10px;
+    font-weight: bold;
+}
+
+.education-details {
+    display: none;
+    margin-top: 10px;
+}
+
+
 /* Work Experience Section */
 #work-experience {
     text-align: center;
@@ -155,6 +195,7 @@ section h2 {
 
 .job p {
     margin-bottom: 10px;
+    font-weight: bold;
 }
 
 .job-details {
