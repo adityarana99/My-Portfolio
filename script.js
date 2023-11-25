@@ -1,5 +1,18 @@
 document.addEventListener('DOMContentLoaded', function(){
 
+    // Function to handle header animation on scroll
+    function handleHeaderAnimation() {
+        const header = document.querySelector('header');
+        window.addEventListener('scroll', function () {
+            const scrollPos = window.scrollY;
+            if (scrollPos > 50) {
+                header.classList.add('scrolled');
+            } else {
+                header.classList.remove('scrolled');
+            }
+        });
+    }
+
     // Add click event listeners to job entries
     const jobEntries = document.querySelectorAll('.job');
     jobEntries.forEach(job => {
